@@ -1,0 +1,19 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+/build
+/android/build
+/buildSrc/build
+/common/build
+/desktop/build
+/.idea
+/.gradle
+local.properties
+/buildSrc/.gradle/
+/gradlew
+/gradlew.bat
