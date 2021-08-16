@@ -1,0 +1,20 @@
+CREATE TABLE note(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    text TEXT NOT NULL
+);
+
+getAll:
+SELECT * FROM note;
+
+add:
+INSERT INTO note(name, text) VALUES ?;
+
+remove:
+DELETE FROM note WHERE id=?;
+
+update:
+UPDATE note SET name=?, text=? WHERE id=?;
+
+find:
+SELECT * FROM note WHERE name=? AND text=?;
