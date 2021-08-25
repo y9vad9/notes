@@ -2,12 +2,12 @@ import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    kotlin("multiplatform")
-    id("org.jetbrains.compose")
+    id(Deps.Plugins.Jetbrains.Kotlin.Multiplatform.Id)
+    id(Deps.Plugins.Jetbrains.Compose.Id)
 }
 
-group = "com.notes"
-version = "1.0"
+group = AppConfig.PACKAGE
+version = AppConfig.VERSION
 
 kotlin {
     jvm {

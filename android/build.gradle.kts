@@ -1,8 +1,8 @@
 plugins {
-    id("org.jetbrains.compose")
-    id("com.android.application")
-    kotlin("android")
-    id("kotlin-parcelize")
+    id(Deps.Plugins.Jetbrains.Compose.Id)
+    id(Deps.Plugins.Android.Application.Id)
+    id(Deps.Plugins.Jetbrains.Kotlin.Android.Id)
+    id(Deps.Plugins.Jetbrains.Kotlin.Parcelize.Id)
 }
 
 group = AppConfig.PACKAGE

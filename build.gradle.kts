@@ -13,8 +13,8 @@ buildscript {
     }
 }
 
-group = "com.notes"
-version = "1.0"
+group = AppConfig.PACKAGE
+version = AppConfig.VERSION
 
 allprojects {
     repositories {

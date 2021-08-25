@@ -10,6 +10,10 @@ object Deps {
                     const val Id = "org.jetbrains.kotlin.multiplatform"
                 }
 
+                object Android {
+                    const val Id = "org.jetbrains.kotlin.android"
+                }
+
                 object Parcelize {
                     const val Id = "kotlin-parcelize"
                 }
@@ -19,6 +23,10 @@ object Deps {
         object Android {
             object Library {
                 const val Id = "com.android.library"
+            }
+
+            object Application {
+                const val Id = "com.android.application"
             }
         }
 
@@ -33,6 +41,13 @@ object Deps {
             const val Activity = "androidx.activity:activity-compose:$Version"
             const val AppCompat = "androidx.appcompat:appcompat:$Version"
             const val CoreKtx = "androidx.core:core-ktx:1.6.0"
+            const val Sqlite = "androidx.sqlite:sqlite:2.2.0-alpha02"
+
+            object Compose {
+                object Accompanist {
+                    const val SystemUiController = "com.google.accompanist:accompanist-systemuicontroller:0.17.0"
+                }
+            }
         }
 
         const val JUnit = "junit:junit:4.13.2"
