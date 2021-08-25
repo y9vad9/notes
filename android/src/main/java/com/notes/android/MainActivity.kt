@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val componentContext = defaultComponentContext()
         setContent {
-            MaterialTheme {
+            NotesTheme {
                 Surface {
                     NavHostComponent(NoteDatabase(DriverFactory(this).createDriver()), componentContext).render()
                 }

@@ -1,5 +1,4 @@
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
@@ -12,6 +11,7 @@ import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import com.notes.common.DriverFactory
 import com.notes.database.NoteDatabase
 import com.notes.navigation.NavHostComponent
+import com.notes.ui.theme.NotesTheme
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
@@ -25,7 +25,7 @@ fun main() {
             dispose = { }
         ) {
             Surface(modifier = Modifier.fillMaxSize()) {
-                MaterialTheme {
+                NotesTheme {
                     root.render()
                 }
             }
