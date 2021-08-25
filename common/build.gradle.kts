@@ -44,6 +44,8 @@ kotlin {
                 api(Deps.Libs.Androidx.CoreKtx)
                 api(Deps.Libs.Androidx.Activity)
                 api(Deps.Libs.SQLDelight.AndroidDriver)
+                api(Deps.Libs.Androidx.Sqlite)
+                api(Deps.Libs.Androidx.Compose.Accompanist.SystemUiController)
             }
         }
         val androidTest by getting {
