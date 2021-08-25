@@ -10,12 +10,14 @@ import androidx.compose.ui.window.rememberWindowState
 import com.arkivanov.decompose.DefaultComponentContext
 import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import com.notes.common.DriverFactory
+import com.notes.database.NoteDatabase
 import com.notes.navigation.NavHostComponent
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
     val lifecycleRegistry = LifecycleRegistry()
-    val root = NavHostComponent(DriverFactory(), DefaultComponentContext(lifecycleRegistry))
+    val root =
+        NavHostComponent(NoteDatabase(DriverFactory().createDriver()), DefaultComponentContext(lifecycleRegistry))
     application {
         val windowState = rememberWindowState()
         Window(
