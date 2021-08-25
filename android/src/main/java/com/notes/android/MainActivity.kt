@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContent {
             MaterialTheme {
                 Surface {
-                    NavHostComponent(DriverFactory(this), componentContext).render()
+                    NavHostComponent(NoteDatabase(DriverFactory(this).createDriver()), componentContext).render()
                 }
             }
         }

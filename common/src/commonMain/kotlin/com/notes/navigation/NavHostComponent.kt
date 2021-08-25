@@ -7,15 +7,14 @@ import com.arkivanov.decompose.push
 import com.arkivanov.decompose.router
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.arkivanov.essenty.parcelable.Parcelize
-import com.notes.common.DriverFactory
-import com.notes.common.createDatabase
 import com.notes.components.Component
 import com.notes.components.integration.NoteEditorComponent
 import com.notes.components.integration.NotesScreenComponent
 import com.notes.database.Note
+import com.notes.database.NoteDatabase
 
 class NavHostComponent(
-    private val driverFactory: DriverFactory,
+    private val database: NoteDatabase,
     componentContext: ComponentContext
 ) : Component, ComponentContext by componentContext {
 
@@ -23,8 +22,6 @@ class NavHostComponent(
         initialConfiguration = ScreenConfig.Notes,
         childFactory = ::createScreenComponent
     )
-
-    private val database by lazy { createDatabase(driverFactory) }
 
     /**
      * Factory function to create screen from given ScreenConfig
