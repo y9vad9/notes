@@ -11,7 +11,7 @@ Simple application made using Compose Multiplatform, SQLDelight and Decompose.
 
 ### Video:
 
-[![IMAGE ALT TEXT HERE](assets/images/main_oneitem.jpg)](assets/videos/preview.mp4)
+![preview](assets/videos/preview.gif)
 
 ## TODO
 
