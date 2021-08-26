@@ -48,13 +48,13 @@ fun NoteEditorView(component: NoteEditor) = Scaffold(
             value = component.title.value,
             onValueChange = { value -> component.processTitle(value) },
             singleLine = true,
-            placeholder = { Text("Note name") }
+            label = { Text("Note name") }
         )
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp).weight(1f),
             value = component.text.value,
             onValueChange = { value -> component.processText(value) },
-            placeholder = { Text("Text") }
+            label = { Text("Text") }
         )
         SaveButton(
             isSaving = component.isSaving.value,
