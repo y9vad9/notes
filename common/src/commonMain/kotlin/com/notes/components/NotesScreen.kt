@@ -1,6 +1,5 @@
 package com.notes.components
 
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import com.notes.database.Note
 
@@ -8,8 +7,9 @@ interface NotesScreen : ItemModifications {
     val notes: State<List<Note>>
     val isLoading: State<Boolean>
 
-    @Composable
-    fun loadNotes()
+    suspend fun loadNotes()
+
+    fun newItem()
 }
 
 interface ItemModifications {

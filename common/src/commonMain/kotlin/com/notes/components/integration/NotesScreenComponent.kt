@@ -10,23 +10,24 @@ import com.notes.database.Note
 import com.notes.database.NoteDatabase
 import com.notes.ui.screens.NotesView
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class NotesScreenComponent(
     componentContext: ComponentContext,
     private val database: NoteDatabase,
-    private val gotoNoteEditor: (Note) -> Unit
+    private val gotoNoteEditor: (Note?) -> Unit
 ) : NotesScreen, Component, ComponentContext by componentContext {
     override val notes: MutableState<List<Note>> = mutableStateOf(listOf())
     override val isLoading: MutableState<Boolean> = mutableStateOf(false)
 
-    @Composable
-    override fun loadNotes() {
+    override suspend fun loadNotes() = withContext(Dispatchers.Default) {
         isLoading.value = true
-        coroutineScope.launch(Dispatchers.Default) {
-            notes.value = database.notesQueries.getAll().executeAsList()
-            isLoading.value = false
-        }
+        notes.value = database.notesQueries.getAll().executeAsList()
+        isLoading.value = false
+    }
+
+    override fun newItem() {
+        gotoNoteEditor(null)
     }
 
     override fun onItemClicked(id: Long) {
@@ -38,6 +39,7 @@ class NotesScreenComponent(
     }
 
     override fun onItemDeleted(id: Long) {
+        database.notesQueries.remove(id)
         notes.value = notes.value.toMutableList().apply {
             removeAll { it.id == id }
         }

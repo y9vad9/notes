@@ -1,6 +1,5 @@
 package com.notes.components
 
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 
 interface NoteEditor : Component {
@@ -12,6 +11,7 @@ interface NoteEditor : Component {
     fun processTitle(input: String)
     fun processText(input: String)
 
-    @Composable
-    fun save()
+    fun exit()
+
+    suspend fun save()
 }

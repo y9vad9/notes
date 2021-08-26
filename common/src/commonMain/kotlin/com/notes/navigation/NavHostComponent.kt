@@ -41,10 +41,11 @@ class NavHostComponent(
                 screenConfig.id,
                 screenConfig.title,
                 screenConfig.text,
-                database
+                database,
+                goBack = { router.push(ScreenConfig.Notes) }
             )
             is ScreenConfig.NewNote -> NoteEditorComponent(
-                null, "", "", database
+                null, "", "", database, goBack = { router.push(ScreenConfig.Notes) }
             )
         }
     }
