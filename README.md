@@ -1,4 +1,4 @@
-![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/y9neon/notes?include_prereleases) [![Hits-of-Code](https://hitsofcode.com/github/y9neon/notes)](https://hitsofcode.com/github/y9neon/notes/view)  ![GitHub](https://img.shields.io/github/license/y9neon/notes)
+![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/y9neon/notes?include_prereleases) [![Hits-of-Code](https://hitsofcode.com/github/y9neon/notes?branch=main)](https://hitsofcode.com/github/y9neon/notes/view?branch=main)  ![GitHub](https://img.shields.io/github/license/y9neon/notes)
 
 # Notes
 
