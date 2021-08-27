@@ -22,11 +22,8 @@ class MainActivity : ComponentActivity() {
                 Surface {
                     rememberSystemUiController().apply {
                         val isDarkTheme = isSystemInDarkTheme()
-                        val color = if (isDarkTheme)
-                            MaterialTheme.colors.surface
-                        else MaterialTheme.colors.primary
-                        setStatusBarColor(color, !isDarkTheme)
-                        setNavigationBarColor(color, !isDarkTheme)
+                        setStatusBarColor(MaterialTheme.colors.surface, !isDarkTheme)
+                        setNavigationBarColor(MaterialTheme.colors.surface, !isDarkTheme)
                     }
                     component.render()
                 }

@@ -2,6 +2,7 @@ package com.notes.ui.widgets
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
@@ -13,7 +14,9 @@ import androidx.compose.ui.Modifier
 fun NotesToolbar(title: String) {
     TopAppBar(
         modifier = Modifier.fillMaxWidth(),
-        title = { Text(title) }
+        title = { Text(title) },
+        backgroundColor = MaterialTheme.colors.surface,
+        contentColor = MaterialTheme.colors.onSurface
     )
 }
 
@@ -27,6 +30,8 @@ fun NotesToolbar(
     TopAppBar(
         modifier = Modifier.fillMaxWidth(),
         title = { Text(title) },
-        navigationIcon = homeButton
+        navigationIcon = homeButton,
+        backgroundColor = MaterialTheme.colors.surface,
+        contentColor = MaterialTheme.colors.onSurface
     )
 }
