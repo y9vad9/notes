@@ -17,3 +17,4 @@ local.properties
 /buildSrc/.gradle/
 /gradlew
 /gradlew.bat
+/android/release
