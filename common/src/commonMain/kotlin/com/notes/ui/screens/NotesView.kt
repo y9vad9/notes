@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.notes.components.ItemModifications
@@ -77,7 +78,7 @@ private fun NoItems() = Column(
 @Composable
 private fun ListView(items: List<Note>, handler: ItemModifications) {
     LazyVerticalGrid(
-        cells = GridCells.Adaptive(120.dp)
+        cells = GridCells.Adaptive(180.dp)
     ) {
         items(items) { item ->
             NoteItemView(
@@ -94,7 +95,7 @@ private fun ListView(items: List<Note>, handler: ItemModifications) {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun LazyItemScope.NoteItemView(item: Note, onClick: () -> Unit, onDeleteClicked: () -> Unit) =
-    Box(Modifier.fillMaxWidth().padding(8.dp)) {
+    Box(Modifier.fillMaxWidth().padding(12.dp)) {
         val removing = mutableStateOf(false)
         Card(
             modifier = Modifier.fillMaxSize().selectable(true) { onClick() }
@@ -102,12 +103,26 @@ private fun LazyItemScope.NoteItemView(item: Note, onClick: () -> Unit, onDelete
                     enabled = true,
                     onClick = onClick,
                     onLongClick = { removing.value = !removing.value }
-                )
+                ),
+            elevation = 6.dp
         ) {
             if (!removing.value) {
                 Column(modifier = Modifier.padding(8.dp)) {
-                    Text(text = item.name, fontWeight = FontWeight.Bold, fontSize = 24.sp)
-                    Text(text = item.text)
+                    Text(
+                        text = item.name,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    Text(
+                        modifier = Modifier.alpha(0.8f),
+                        text = item.text,
+                        fontWeight = FontWeight.Light,
+                        fontSize = 14.sp,
+                        maxLines = 3,
+                        overflow = TextOverflow.Ellipsis
+                    )
                 }
             } else {
                 Row(
